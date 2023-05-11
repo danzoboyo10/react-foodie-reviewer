@@ -3,6 +3,7 @@ import "./App.css";
 import FoodForm from "./FoodForm";
 import Footer from "./Footer";
 import FoodReview from "./FoodReview";
+import Header from "./Header";
 
 const DUMMY_REVIEWS = [
   {
@@ -141,6 +142,9 @@ function App() {
 
   return (
     <div className="App">
+      <div className="header">
+      <Header />
+      </div>
       <FoodForm
         handleNameChange={handleNameChange}
         handleAddress={handleAddress}
@@ -175,8 +179,15 @@ function App() {
             </div>
           );
         })}
+        <div>
+        <Footer/>
+
+        </div>
+
       </div>
+      
     </div>
+
   );
 }
 

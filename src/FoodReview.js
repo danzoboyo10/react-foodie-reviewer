@@ -11,13 +11,10 @@ const FoodReview = (props) => {
           Delete Review
         </button>
       </div>
-      <div className="reviewRowRight"
-           style={{backgroundColor: props.favoritedRestaurant ? "green" : "red"}}
-
-      >
-
-
-      </div>
+      <div
+        className="reviewRowRight"
+        style={{ backgroundColor: props.favoritedRestaurant ? "green" : "red" }}
+      ></div>
       <div className="foodReviewsContainer">
         <div className="reviewDetailsContainer">
           <h1 className="restaurantName">

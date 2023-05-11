@@ -4,7 +4,7 @@ import Select from "react-select"
 
 
 const FoodForm = (props) => {
-  const [phoneValue, setPhoneValue] = useState();
+  const [value, setValue] = useState();
 
   const options = [
     {value: 'breakfast', label:'Breakfast'},
@@ -15,7 +15,7 @@ const FoodForm = (props) => {
 
   return (
     <div className="addFoodReview">
-      <div className="foodFormDirections">* Give Your Honest Food Review *</div>
+      <div className="foodFormDirections"> <b> * REVIEW AND KEEP TRACK OF RESTRAUNTS YOU HAVE BEEN TO BY FILLING OUT THE FORM * </b></div>
       <input
         type="text"
         name="restaurant name"
@@ -38,9 +38,9 @@ const FoodForm = (props) => {
       <PhoneInput 
       placeholder="Select your Restaurant's Country and Enter their Phone #"
       country="US" 
-      phoneVal={phoneValue} 
+      phoneval={value} 
       
-      onChange={setPhoneValue} />
+      onChange={setValue} />
   
       <input
         type="text"
@@ -98,9 +98,12 @@ const FoodForm = (props) => {
         placeholder="Rate the Restaurant (0-10)"
         onChange={props.handleRating}
       />
+
       <button className="addReviewBtn" onClick={props.addReview}>
         Submit Review
       </button>
+      
+     
     </div>
   );
 };

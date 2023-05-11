@@ -2,7 +2,7 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <div>Footer</div>
+    <div className='footer'> * REVIEW AND KEEP TRACK OF ALL RESTAURANTS YOU VISIT! *</div>
   )
 }
 
