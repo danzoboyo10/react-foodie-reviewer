@@ -4,7 +4,17 @@ const FoodReview = (props) => {
   return (
     <div className="reviewsContainer">
       <div className="reviewBtnsContainer">
-        <button onClick={() => props.deleteReview(props.id)}> Delete Review </button>
+        <button onClick={() => props.starRestaurant(props.id)}>
+          Favorite Restaurant
+        </button>
+        <button onClick={() => props.deleteReview(props.id)}>
+          Delete Review
+        </button>
+      </div>
+      <div className="reviewRowRight"
+           style={{backgroundColor: props.favoritedRestaurant ? "green" : "red"}}
+
+      >
 
 
       </div>

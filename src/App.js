@@ -18,6 +18,7 @@ const DUMMY_REVIEWS = [
     typeOfMealHad: "Lunch",
     reccommendToFriend: "Yes",
     ratingOutOfTen: "9.6",
+    favoritedRestaurant: true,
   },
   {
     id: "e2",
@@ -31,6 +32,7 @@ const DUMMY_REVIEWS = [
     typeOfMealHad: "Dinner",
     reccommendToFriend: "No",
     ratingOutOfTen: "4.3",
+    favoritedRestaurant: false,
   },
   {
     id: "e3",
@@ -44,6 +46,7 @@ const DUMMY_REVIEWS = [
     typeOfMealHad: "Breakfast",
     reccommendToFriend: "No",
     ratingOutOfTen: "4.1",
+    favoritedRestaurant: false,
   },
 ];
 
@@ -115,13 +118,26 @@ function App() {
       typeOfMealHad: typeOfMealHad,
       reccommendToFriend: reccommendToFriend,
       ratingOutOfTen: ratingOutOfTen,
+      favoritedRestaurant: true,
     };
     setFoodList([...foodList, newFoodReviewList]);
   };
 
   const deleteReview = (id) => {
     setFoodList(foodList.filter((review) => review.id !== id));
-  }
+  };
+
+  const starRestaurant = (id) => {
+    setFoodList(
+      foodList.map((review) => {
+        if (review.id === id) {
+          return { ...review, favoritedRestaurant: false };
+        } else {
+          return review;
+        }
+      })
+    );
+  };
 
   return (
     <div className="App">
@@ -153,6 +169,8 @@ function App() {
                 reccommendToFriend={review.reccommendToFriend}
                 ratingOutOfTen={review.ratingOutOfTen}
                 deleteReview={deleteReview}
+                starRestaurant={starRestaurant}
+                favoritedRestaurant={review.favoritedRestaurant}
               />
             </div>
           );
