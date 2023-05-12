@@ -115,19 +115,11 @@ const FoodForm = (props) => {
         placeholder="Rate the Restaurant (0-10)"
         onChange={props.handleRating}
       />
-      <img
-        className="reactImgLeft"
-        src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png"
-        alt=""
-      />
       <button className="addReviewBtn" onClick={props.addReview}>
         Submit Review
       </button>
-      <img
-        className="reactImgRight"
-        src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png"
-        alt=""
-      />
+   
+     
     </div>
   );
 };

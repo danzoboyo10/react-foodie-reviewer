@@ -10,7 +10,7 @@ const DUMMY_REVIEWS = [
     id: "e1",
     restaurantName: "McDonalds",
     restaurantAddress: "123 Mcdonalds Avenue, Boston, MA",
-    phoneNumber: "333-444-4000",
+    // phoneNumber: "333-444-4000",
     webSiteLink: "https://www.mcdonalds.com/us/en-us.html",
     // restaurantPic: url(
     //   "https://media.cnn.com/api/v1/images/stellar/prod/220726123942-mcdonalds-earnings.jpg?c=original"
@@ -25,7 +25,7 @@ const DUMMY_REVIEWS = [
     id: "e2",
     restaurantName: "Pizza Hut",
     restaurantAddress: "999 Pizza Drive, Bismarck, North Dakota",
-    phoneNumber: "999-444-4000",
+    // phoneNumber: "999-444-4000",
     webSiteLink: "https://www.pizzahut.com/",
     // restaurantPic: url(
     //   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8ywxUZAyvv88P1knvLgjWnt5ZKhHma2a4vA&usqp=CAU"),
@@ -39,7 +39,7 @@ const DUMMY_REVIEWS = [
     id: "e3",
     restaurantName: "Noodle Market",
     restaurantAddress: "455 Noodle Boulevard, Cambridge, MA",
-    phoneNumber: "123-987-654",
+    // phoneNumber: "123-987-654",
     webSiteLink: "https://www.noodlemarket.net/menu",
     // restaurantPic: url(
     //   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0T-qbuqfJOh34Xg0MEmO0Qo_QkpQ09lnBdQ&usqp=CAU"),
@@ -55,7 +55,7 @@ function App() {
   const [foodList, setFoodList] = useState(DUMMY_REVIEWS);
   const [restaurantName, setRestaurantName] = useState("");
   const [restaurantAddress, setRestaurantAddress] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
+  // const [phoneNumber, setPhoneNumber] = useState("");
   const [webSiteLink, setWebsiteLink] = useState("");
   // const [restaurantPic, setRestaurantPic] = useState("")
   const [dateVisited, setDateVisited] = useState("");
@@ -73,10 +73,10 @@ function App() {
     console.log(event.target.value);
   };
 
-  const handlePhoneNum = (event) => {
-    setPhoneNumber(event.target.value);
-    console.log(event.target.value);
-  };
+  // const handlePhoneNum = (event) => {
+  //   setPhoneNumber(event.target.value);
+  //   console.log(event.target.value);
+  // };
 
   const handleWebLink = (event) => {
     setWebsiteLink(event.target.value);
@@ -112,7 +112,7 @@ function App() {
       id: foodList.length === 0 ? 1 : foodList[foodList.length - 1].id + 1,
       restaurantName: restaurantName,
       restaurantAddress: restaurantAddress,
-      phoneNumber: phoneNumber,
+      // phoneNumber: phoneNumber,
       webSiteLink: webSiteLink,
       // restaurantPic: restaurantPic,
       dateVisited: dateVisited,
@@ -140,6 +140,18 @@ function App() {
     );
   };
 
+  const unStarRestaurant = (id) => {
+    setFoodList(
+      foodList.map((review) => {
+        if (review.id === id) {
+          return { ...review, favoritedRestaurant: true };
+        } else {
+          return review;
+        }
+      })
+    );
+  };
+
   return (
     <div className="App">
       <div className="header">
@@ -148,7 +160,7 @@ function App() {
       <FoodForm
         handleNameChange={handleNameChange}
         handleAddress={handleAddress}
-        handlePhoneNum={handlePhoneNum}
+        // handlePhoneNum={handlePhoneNum}
         handleWebLink={handleWebLink}
         // handleRestaurantPic={handleRestaurantPic}
         handleDateVisited={handleDateVisited}
@@ -174,6 +186,7 @@ function App() {
                 ratingOutOfTen={review.ratingOutOfTen}
                 deleteReview={deleteReview}
                 starRestaurant={starRestaurant}
+                unStarRestaurant={unStarRestaurant}
                 favoritedRestaurant={review.favoritedRestaurant}
               />
             </div>
