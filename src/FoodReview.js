@@ -3,55 +3,60 @@ import React from "react";
 const FoodReview = (props) => {
   return (
     <div className="reviewsContainer">
-      <div className="reviewBtnsContainer">
-        <button onClick={() => props.starRestaurant(props.id)}>
-          Favorite Restaurant
-        </button>
-        <button onClick={() => props.deleteReview(props.id)}>
-          Delete Review
-        </button>
-      </div>
-      <div
-        className="reviewRowRight"
-        style={{ backgroundColor: props.favoritedRestaurant ? "green" : "red" }}
+      
+
+        <div
+        className="favoriteRestaurant"
+        // style={{ backgroundColor: props.favoritedRestaurant ? "green" : "red" }}
+        style={{ backgroundImage: props.favoritedRestaurant ? 'url("https://i.pinimg.com/originals/66/9f/9e/669f9e9981a7cb4bfe804c72fb79dbdc.gif")' :'url("https://i.pinimg.com/originals/66/9f/9e/669f9e9981a7cb4bfe804c72fb79dbdc.gif")'}}
       ></div>
-      <div className="foodReviewsContainer">
         <div className="reviewDetailsContainer">
+
           <h1 className="restaurantName">
-            <i> Restaurant Name: </i>
+            <i> RESTAURANT NAME: </i>
             {props.restaurantName}
           </h1>
           <h2 className="restaurantAddress">
-            <i> Restaurant Address: </i>
+            <i> RESTAURANT ADDRESS: </i>
             {props.restaurantAddress}
           </h2>
           <h2 className="phoneNumber">
-            <i> Phone Number: </i>
+            <i> RESTAURANT PHONE #: </i>
             {props.phoneNumber}
           </h2>
           <h2 className="webSiteLink">
-            <i> Website Link: </i>
+            <i> WEBSITE LINK: </i>
             {props.webSiteLink}
           </h2>
           <h2 className="dateVisited">
-            <i> Date Visited: </i>
+            <i> DATE VISITED: </i>
             {props.dateVisited}
           </h2>
           <h2 className="typeOfMealHad">
-            <i> Type of Meal Had: </i>
+            <i> TYPE OF MEAL HAD: </i>
             {props.typeOfMealHad}
           </h2>
           <h2 className="reccommendToFriend">
-            <i> Reccommend to a Friend?: </i>
+            <i>RECCOMMEND TO A FRIEND?: </i>
             {props.reccommendToFriend}
           </h2>
           <h2 className="ratingOutOfTen">
-            <i> Rating Out of 10: </i>
+            <i> RATING OUT OF 10: </i>
             {props.ratingOutOfTen}
           </h2>
+          
+          <div className="reviewBtnsContainer">
+        <button className="faveRestaurantBtn" onClick={() => props.starRestaurant(props.id)}>
+          Favorite Restaurant
+        </button>
+        <button className = "deleteReviewBtn" onClick={() => props.deleteReview(props.id)}>
+          Delete Review
+        </button>
+       
+        
+      </div>
         </div>
       </div>
-    </div>
   );
 };
 
