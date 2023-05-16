@@ -8,12 +8,11 @@ const FoodReview = (props) => {
         // style={{ backgroundColor: props.favoritedRestaurant ? "green" : "red" }}
         style={{
           backgroundImage: props.favoritedRestaurant
-            ? 'url("https://t3.ftcdn.net/jpg/01/75/03/46/360_F_175034602_dW31V5QsnyY3oBsbcoMFtNhNlgRWdAA6.jpg")'
-            : 'url("https://i.pinimg.com/originals/66/9f/9e/669f9e9981a7cb4bfe804c72fb79dbdc.gif")',
+            ? 'url("https://i.pinimg.com/originals/66/9f/9e/669f9e9981a7cb4bfe804c72fb79dbdc.gif")'
+            : 'url("https://t3.ftcdn.net/jpg/01/75/03/46/360_F_175034602_dW31V5QsnyY3oBsbcoMFtNhNlgRWdAA6.jpg")',
         }}
       ></div>
 
-      
       <h1 className="restaurantName">
         <i> RESTAURANT NAME: </i>
         {props.restaurantName}
@@ -23,10 +22,7 @@ const FoodReview = (props) => {
         <i> RESTAURANT ADDRESS: </i>
         {props.restaurantAddress}
       </h2>
-      {/* <h2 className="phoneNumber">
-            <i> RESTAURANT PHONE #: </i>
-            {props.phoneNumber}
-          </h2> */}
+
       <h2 className="webSiteLink">
         <i> WEBSITE LINK: </i>
         {props.webSiteLink}
