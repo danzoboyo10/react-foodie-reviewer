@@ -231,7 +231,6 @@ input[type="number"] {
   background-image: url("https://t3.ftcdn.net/jpg/01/75/03/46/360_F_175034602_dW31V5QsnyY3oBsbcoMFtNhNlgRWdAA6.jpg");
   background-size: cover;
   background-position: center;
-  /* background-color: whitesmoke; */
   margin-left: 220px;
   width: 75%;
   border: 7px solid grey;
@@ -267,7 +266,7 @@ input[type="number"] {
   font-family: "Times New Roman", Times, serif;
   padding-left: 20px;
   font-size: 20px;
-  color: black;
+  font-weight: bold;
   display: block;
 
 }

@@ -14,33 +14,33 @@ const FoodReview = (props) => {
       ></div>
 
       <h1 className="restaurantName">
-        <i> RESTAURANT NAME: </i>
+        <i> Restaurant Name: </i>
         {props.restaurantName}
       </h1>
 
       <h2 className="restaurantAddress">
-        <i> RESTAURANT ADDRESS: </i>
+        <i> Restaurant Address: </i>
         {props.restaurantAddress}
       </h2>
 
       <h2 className="webSiteLink">
-        <i> WEBSITE LINK: </i>
+        <i> <b> Website Link: </b> </i>
         {props.webSiteLink}
       </h2>
       <h2 className="dateVisited">
-        <i> DATE VISITED: </i>
+        <i> Date Visited: </i>
         {props.dateVisited}
       </h2>
       <h2 className="typeOfMealHad">
-        <i> TYPE OF MEAL HAD: </i>
+        <i> Type of Meal Had: </i>
         {props.typeOfMealHad}
       </h2>
       <h2 className="reccommendToFriend">
-        <i>RECCOMMEND TO A FRIEND?: </i>
+        <i>Reccommend to a Friend?: </i>
         {props.reccommendToFriend}
       </h2>
       <h2 className="ratingOutOfTen">
-        <i> RATING OUT OF 10: </i>
+        <i> Rating Out of 10: </i>
         {props.ratingOutOfTen}
       </h2>
 

@@ -10,11 +10,11 @@ const FoodForm = (props) => {
   return (
     <div className="addFoodReviewContainer">
       <div className="foodFormDirections">
-        {" "}
+    
         <b>
-          {" "}
-          * REVIEW AND KEEP TRACK OF RESTRAUNTS YOU HAVE BEEN TO BY FILLING OUT
-          THE FORM *{" "}
+         
+          <i> * REVIEW AND KEEP TRACK OF RESTRAUNTS YOU HAVE BEEN TO BY FILLING OUT
+          THE FORM * </i>
         </b>
       </div>
       <input
