@@ -50,7 +50,7 @@ const FoodReview = (props) => {
         </button>
 
         <button onClick={() => props.unStarRestaurant(props.id)}>
-          UnFavorite Restaurant
+          Unfavorite Restaurant
         </button>
         <button onClick={() => props.deleteReview(props.id)}>
           Delete Review
