@@ -3,8 +3,8 @@
 .App {
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
   width: 100vw;
+  height: 300vh;
   background-image: url("https://cdn5.vectorstock.com/i/1000x1000/70/54/pub-and-restaurant-background-scene-vector-33807054.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -55,13 +55,11 @@
 
 .addFoodReviewContainer {
   background-image: url("https://t3.ftcdn.net/jpg/01/75/03/46/360_F_175034602_dW31V5QsnyY3oBsbcoMFtNhNlgRWdAA6.jpg");
-
-  /* background-color: whitesmoke; */
   margin-left: 300px;
   width: 70%;
   background-size: cover;
   background-position: center;
-  margin-top: 60px;
+  margin-top: 5px;
   margin-bottom: 50px;
   border: 7px solid grey;
   border-radius: 2000px;
@@ -69,12 +67,11 @@
   padding-top: 40px;
   padding-bottom: 130px;
 }
-/* select {
-  padding-top: 20px;
-  margin: 0 auto;
-  width: 500px;
-  margin-top: 10px;
-} */
+.foodList {
+  display: flex;
+  flex-direction: column;
+  
+}
 input {
   display: flex;
   justify-content: center;
