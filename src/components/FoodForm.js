@@ -8,6 +8,7 @@ const FoodForm = (props) => {
 
   return (
     <>
+    
       <button className = "handleCloseOpenBtn" onClick={handleCloseOpenClick}>
         {formIsOpen ? "Close Foodie Review Form" : "Open Foodie Review Form"}
       </button>

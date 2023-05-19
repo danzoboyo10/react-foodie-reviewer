@@ -1,11 +1,35 @@
-import React from "react";
+import React, { useState } from "react";
+import Modal from "react-modal";
 
 const FoodReview = (props) => {
+  const [showModal, setShowModal] = useState(false);
+
+  const handleDelete = () => {
+    setShowModal(true);
+  };
+  const handleConfirmDelete = () => {
+    setShowModal(false);
+  };
+
+  const handleCancelDelete = () => {
+    setShowModal(false);
+  };
+  const modalStyles = {
+    content: {
+      backgroundColor: "black",
+      color: "whiteSmoke",
+      width: "420px",
+      height: "200px",
+      margin: "auto",
+      border: "solid",
+      borderColor: "white-smoke",
+      textAlign: "center",
+    },
+  };
   return (
     <div className="reviewDetailsContainer">
       <div
         className="favoriteRestaurant"
-        // style={{ backgroundColor: props.favoritedRestaurant ? "green" : "red" }}
         style={{
           backgroundImage: props.favoritedRestaurant
             ? 'url("https://i.pinimg.com/originals/66/9f/9e/669f9e9981a7cb4bfe804c72fb79dbdc.gif")'
@@ -24,7 +48,10 @@ const FoodReview = (props) => {
       </h2>
 
       <h2 className="webSiteLink">
-        <i> <b> Website Link: </b> </i>
+        <i>
+          {" "}
+          <b> Website Link: </b>{" "}
+        </i>
         {props.webSiteLink}
       </h2>
       <h2 className="dateVisited">
@@ -52,9 +79,31 @@ const FoodReview = (props) => {
         <button onClick={() => props.unStarRestaurant(props.id)}>
           Unfavorite Restaurant
         </button>
-        <button onClick={() => props.deleteReview(props.id)}>
-          Delete Review
-        </button>
+        <button onClick={handleDelete}>Delete Review</button>
+        <Modal
+          isOpen={showModal}
+          onRequestClose={handleCancelDelete}
+          style={modalStyles}
+        >
+          <h2 className="areYouSure">
+            {" "}
+            Are you sure you want to delete this review?"{" "}
+          </h2>
+          <button
+            className="modalYesBtn"
+            onClick={() => {
+              handleConfirmDelete();
+              props.deleteReview(props.id);
+            }}
+          >
+            {" "}
+            Yes{" "}
+          </button>
+          <button className="modalNoBtn" onClick={handleCancelDelete}>
+            {" "}
+            No{" "}
+          </button>
+        </Modal>
       </div>
     </div>
   );
