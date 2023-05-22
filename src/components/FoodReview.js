@@ -87,7 +87,7 @@ const FoodReview = (props) => {
         >
           <h2 className="areYouSure">
             {" "}
-            Are you sure you want to delete this review?"{" "}
+            Are you sure you want to delete this review?
           </h2>
           <button
             className="modalYesBtn"
